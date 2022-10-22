@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<windows.h>
 #include<conio.h>
-void move(char a[][50], char m, int* money, int* x, int* y,int* stronger)  /*¿ØÖÆÈËÎïÒÆ¶¯£¬»ñµÃ½ğ±Ò£¬Ê°È¡µÀ¾ß*/
+void move(char a[][50], char m, int* money, int* x, int* y,int* stronger)  /*æ§åˆ¶äººç‰©ç§»åŠ¨ï¼Œè·å¾—é‡‘å¸ï¼Œæ‹¾å–é“å…·*/
 {
 
 	if (m == 's' && a[*x + 1][*y] == ' ')
@@ -78,7 +78,7 @@ void move(char a[][50], char m, int* money, int* x, int* y,int* stronger)  /*¿ØÖ
 		(*money)++;
 	}
 }
-void prop(char a[][50], char m, int* x, int* y)     /*µÀ¾ßĞ§¹û£¬ÎŞÊÓ#²¿·ÖÇ½Ìå*/
+void prop(char a[][50], char m, int* x, int* y)     /*é“å…·æ•ˆæœï¼Œæ— è§†#éƒ¨åˆ†å¢™ä½“*/
 {
 	
 		if (m == 's'&& a[*x + 1][*y] != 'x'&& a[*x + 1][*y] != '|')
@@ -109,37 +109,37 @@ void prop(char a[][50], char m, int* x, int* y)     /*µÀ¾ßĞ§¹û£¬ÎŞÊÓ#²¿·ÖÇ½Ìå*/
 			a[*x][*y] = 'o';
 		}
 }
-void put1(char a[][50],int count,int money)     /*ÆÁÄ»Êä³öÓÎÏ·³¡¾°*/
+void put1(char a[][50],int count,int money)     /*å±å¹•è¾“å‡ºæ¸¸æˆåœºæ™¯*/
 	{
-		printf("Ê£Óà%d²½\n½ğ±ÒÊıÁ¿£º%d,ÄãĞèÒªÈı¸ö½ğ±Ò²ÅÄÜ¿ªÆô´óÃÅ\n", 80 - count, money);
+		printf("å‰©ä½™%dæ­¥\né‡‘å¸æ•°é‡ï¼š%d,ä½ éœ€è¦ä¸‰ä¸ªé‡‘å¸æ‰èƒ½å¼€å¯å¤§é—¨\n", 80 - count, money);
 		int i = 0;
 		for (i = 0; i < 12; i++)
 			puts(a[i]);
 	}
-void introduction(int count,int money)  /*ÓÎÏ·½éÉÜ*/
+void introduction(int count,int money)  /*æ¸¸æˆä»‹ç»*/
 {
-	printf("ÇëÊ¹ÓÃÓ¢ÎÄÊäÈë·¨£¡\n²Ù×÷·½Ê½£ºÉÏÏÂ×óÓÒ=wsad\n o ´ú±íÄã²Ù×÷µÄÈËÎï£¬ # ´ú±íÇ½Ìå,xÎª±ß½ç£¬$Îª½ğ±Ò£¬£¡ÎªÉñÃØµÀ¾ßÇÒÄÜÔö¼Ó½ğ±ÒÊıÁ¿¡£\n");
+	printf("è¯·ä½¿ç”¨è‹±æ–‡è¾“å…¥æ³•ï¼\næ“ä½œæ–¹å¼ï¼šä¸Šä¸‹å·¦å³=wsad\n o ä»£è¡¨ä½ æ“ä½œçš„äººç‰©ï¼Œ # ä»£è¡¨å¢™ä½“,xä¸ºè¾¹ç•Œï¼Œ$ä¸ºé‡‘å¸ï¼Œï¼ä¸ºç¥ç§˜é“å…·ä¸”èƒ½å¢åŠ é‡‘å¸æ•°é‡ã€‚\n");
 	Sleep(4000);
 	system("cls");
-	printf("ÓÎÏ·ÈÎÎñ£ºÔÚ¹æ¶¨²½ÊıÄÚ£¬ÄãĞèÒª¼ñµ½3¸ö½ğ±Ò¿ªÆô´óÃÅ²¢×ßÏòÖÕµãÎª»ñÊ¤\n");
-	printf("ÎÂÜ°ÌáÊ¾£º´¥·¢µÀ¾ßĞ§¹ûºó½ğ±ÒÊıÁ¿²»ÔÙÔö¼ÓÅ¶!\n¿ªÊ¼ÄãµÄÓÎÏ·°É£¡\n\n\n");
+	printf("æ¸¸æˆä»»åŠ¡ï¼šåœ¨è§„å®šæ­¥æ•°å†…ï¼Œä½ éœ€è¦æ¡åˆ°3ä¸ªé‡‘å¸å¼€å¯å¤§é—¨å¹¶èµ°å‘ç»ˆç‚¹ä¸ºè·èƒœ\n");
+	printf("æ¸©é¦¨æç¤ºï¼šè§¦å‘é“å…·æ•ˆæœåé‡‘å¸æ•°é‡ä¸å†å¢åŠ å“¦!\nå¼€å§‹ä½ çš„æ¸¸æˆå§ï¼\n\n\n");
 	Sleep(4000);
 	system("cls");
 }
 int main()
 {
 	char a[50][50] =     {"xxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-		                  "x o# ### # ###    ####    |  ÖÕµã",
-						  "x  # # $##    # ##     #  #x",
-						  "x  #  #  # #  #  #   ##### x",
-					  	  "x#  #  #   # $# ####    #  x",
-						  "x     ##  #####     #   #  x",
-						  "x ## #  # ##   # # ## ##!  x",
+		              "x o# ### # ###    ####    |  ç»ˆç‚¹",
+			      "x  # # $##    # ##     #  #x",
+			      "x  #  #  # #  #  #   ##### x",
+			      "x#  #  #   # $# ####    #  x",
+			      "x     ##  #####     #   #  x",
+			      "x ## #  # ##   # # ## ##!  x",
 	                      "x#   #   $   ### # #   ### x",
-		                  "x  # ###  ### #   ####     x",
-		                  "x  #      #      #       # x",
-		                  "x   #####   ###     ##  # #x",
-	                      "xxxxxxxxxxxxxxxxxxxxxxxxxxxx"};     /*ÃÜÊÒµØÍ¼*/
+		              "x  # ###  ### #   ####     x",
+		              "x  #      #      #       # x",
+		              "x   #####   ###     ##  # #x",
+	                      "xxxxxxxxxxxxxxxxxxxxxxxxxxxx"};     /*å¯†å®¤åœ°å›¾*/
 	int  x = 1, y = 2;
 	char ch;
 	int count = 0,money=0,stronger=0;
@@ -150,7 +150,7 @@ int main()
 	{
 		ch = _getch();
 		count++;
-		if (stronger == 0)                          /*ÅĞ¶¨ÊÇ·ñ»ñÈ¡µÀ¾ß*/
+		if (stronger == 0)                          /*åˆ¤å®šæ˜¯å¦è·å–é“å…·*/
 		{	
 			move(a, ch, &money, &x, &y, &stronger);
 		}
@@ -159,21 +159,21 @@ int main()
 			prop(a, ch, &x, &y);
 		}
 		system("cls");
-		if (money ==3&&a[1][26]!='o')        /*½âËø´óÃÅÅĞ¶¨*/
+		if (money ==3&&a[1][26]!='o')        /*è§£é”å¤§é—¨åˆ¤å®š*/
 		{
 			a[1][26] = ' ';
 		}
 		put1(a,count,money);
-		if (x == 1 && y == 27)          /*ÌÓÍÑ³É¹¦ÅĞ¶¨*/
+		if (x == 1 && y == 27)          /*é€ƒè„±æˆåŠŸåˆ¤å®š*/
 		{
 			system("cls");
-			printf("´³¹Ø³É¹¦!!!\n");
+			printf("é—¯å…³æˆåŠŸ!!!\n");
 			break;
 		}
-		if (count >= 80)              /*ÌÓÍÑÊ§°ÜÅĞ¶¨*/
+		if (count >= 80)              /*é€ƒè„±å¤±è´¥åˆ¤å®š*/
 		{
 			system("cls");
-			printf("²½ÊıÒÑÓÃÍê£¬ÄãÊäÁË£¡");
+			printf("æ­¥æ•°å·²ç”¨å®Œï¼Œä½ è¾“äº†ï¼");
 			break;
 		}
 	}
